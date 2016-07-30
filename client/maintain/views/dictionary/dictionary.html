@@ -1,0 +1,38 @@
+<section class="content-header">
+    <h1>
+        字典维护
+    </h1>
+    <ol class="breadcrumb">
+        <li><a ui-sref="home"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">Dashboard</a></li>
+        <li class="active">字典维护</li>
+    </ol>
+</section>
+<!-- Main content -->
+<section class="content" style="margin-top: 5px;" ng-app="positionIntroduction" ng-controller="dictionaryController" ng-init="getData()">
+
+    <!-- Your Page Content Here -->
+    <div class="carrier-section-position" >
+        <!--<h1 class="carrier-title-margin"><a class="no-underline" >Seekers Maintain</a></h1>-->
+        <!--<ul class="nav nav-tabs" ng-init="$scope.activeTab=1">-->
+        <!--<li ng-class="{active: $scope.activeTab == 1}"><a href="javascript:;" ng-click="$scope.activeTab = 1">Search</a></li>-->
+        <!--&lt;!&ndash;<li class="pull-right"><a class="btn btn-primary" id="createbtn" ng-click="createModal()">New Carrier</a></li>&ndash;&gt;-->
+        <!--</ul>-->
+        <div class="panel panel-default" >
+            <div class="panel-heading"><label class="control-label">Result</label></div>
+            <div class="panel-body">
+                <div class="tab-content tab-bordered">
+                    <!-- <section class="content" >-->
+                    <div class="text-right" style="margin-bottom:5px;">
+                        <button class='btn btn-primary'  ng-click="create()" style="font-weight:bold;">添加</button>
+                        <button class="btn btn-info" ng-click="delete()" style="font-weight:bold;">删除</button>
+                    </div>
+                    <div ui-grid="dictionaryGrid" ui-grid-edit ui-grid-pagination ui-grid-cellNav ui-grid-selection></div>
+                    <!--</section>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <toaster-container toaster-options="{'time-out': 3000, 'animation-class': 'geo-toast-top-right'}"></toaster-container>
+</section>
