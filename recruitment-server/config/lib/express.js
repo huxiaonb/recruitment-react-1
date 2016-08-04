@@ -35,8 +35,6 @@ module.exports.initLocalVariables = function (app) {
   app.locals.keywords = config.app.keywords;
   app.locals.logo = config.logo;
   app.locals.favicon = config.favicon;
-  app.locals.jsFiles = config.files.client.js;
-  app.locals.cssFiles = config.files.client.css;
   // Passing the request url to environment locals
   app.use(function (req, res, next) {
     res.locals.host = req.protocol + '://' + req.hostname;
@@ -77,7 +75,6 @@ module.exports.initMiddleware = function (app) {
     app.set('view cache', false);
   } else if (process.env.NODE_ENV === 'production') {
     app.locals.cache = 'memory';
-    app.set('view cache', app.locals.cache);
   }
 
   // Request body parsing middleware should be above methodOverride
@@ -278,7 +275,7 @@ module.exports.init = function (db) {
   this.initModulesServerRoutes(app);
 
   // Initialize error routes
-  this.initErrorRoutes(app);
+  // this.initErrorRoutes(app);
 
   return app;
 };
